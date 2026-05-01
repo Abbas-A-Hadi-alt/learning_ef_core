@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="business_layer/business_layer.csproj" Id="31400792-74bb-441f-8716-9c5430038b4e" />
+  <Project Path="data_access_layer/data_access_layer.csproj" Id="0cdfc101-9657-43e4-84e5-04c0d886d121" />
+  <Project Path="Modules/Modules.csproj" Id="b17abf19-e2fd-4404-a72a-b08cf1837830" />
+  <Project Path="web-api/web-api.csproj" />
+</Solution>
