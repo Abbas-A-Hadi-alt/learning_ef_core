@@ -11,3 +11,20 @@ public partial class StudentProfile
 
     public virtual Student Student { get; set; } = null!;
 }
+
+public partial class StudentProfile
+{
+    public static StudentProfile Empty = new StudentProfile()
+    {
+        StudentId = -1,
+        Address = string.Empty,
+        City = string.Empty,
+        Country = string.Empty,
+        Bio = string.Empty,
+        LinkedInUrl = string.Empty,
+    };
+
+    public static StudentProfile StudentWithEmptyProfile(Student student)
+        => (Empty.Student = student)
+                .StudentProfile!;
+}

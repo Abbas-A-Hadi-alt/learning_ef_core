@@ -3,10 +3,10 @@ using Modules.DTOs.Students;
 
 namespace business_layer.Services;
 
-public class EnrollmentService(EnrollmentRepository enrollmentRepository)
+public class EnrollmentService(EnrollmentRepository repository)
 {
     public async Task<List<StudentCourseCountDto>> GetEachStudentWithNumberOfRegisteredCourses()
     {
-        return await enrollmentRepository.GetEachStudentWithNumberOfRegisteredCourses();
+        return await repository.GetEachStudentWithNumberOfRegisteredCourses();
     }
 }

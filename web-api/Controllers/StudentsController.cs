@@ -1,6 +1,7 @@
 ﻿using business_layer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Modules.DTOs.Students;
 using Modules.Entities;
 
 namespace web_api.Controllers;
@@ -40,6 +41,47 @@ public class StudentsController(StudentService studentService) : ControllerBase
         return Ok(students);
     }
 
+    [AllowAnonymous]
+    [HttpGet("AllStudentWithItProfile_UseLeftJoin", Name = "GetAllStudentWithItProfile_UseLeftJoin")]
+    public async Task<ActionResult<List<StudentWithStudentProfile>>> GetAllStudentWithItProfile_UseLeftJoin()
+    {
+        var student = await studentService.GetAllStudentWithItProfile_UseLeftJoin();
+
+        if (student.Count is 0)
+        {
+            return NotFound("No Student Found!");
+        }
+
+        return Ok(student);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("AllStudentWithItProfile_UseJoin", Name = "GetAllStudentWithItProfile_UseJoin")]
+    public async Task<ActionResult<List<StudentWithStudentProfile>>> GetAllStudentWithItProfile_UseJoin()
+    {
+        var student = await studentService.GetAllStudentWithItProfile_UseJoin();
+
+        if (student.Count is 0)
+        {
+            return NotFound("No Student Found!");
+        }
+
+        return Ok(student);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("AllStudentWithItProfile_UseProjection", Name = "GetAllStudentWithItProfile_UseProjection")]
+    public async Task<ActionResult<List<StudentWithStudentProfile>>> GetAllStudentWithItProfile_UseProjection()
+    {
+        var student = await studentService.GetAllStudentWithItProfile_UseProjection();
+
+        if (student.Count is 0)
+        {
+            return NotFound("No Student Found!");
+        }
+
+        return Ok(student);
+    }
 
     [AllowAnonymous]
     [HttpGet("{id}", Name = "GetStudentById")]
