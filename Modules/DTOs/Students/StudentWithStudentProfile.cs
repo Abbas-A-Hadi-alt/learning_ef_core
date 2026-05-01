@@ -1,5 +1,4 @@
 ﻿using Modules.Entities;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Modules.DTOs.Students;
 

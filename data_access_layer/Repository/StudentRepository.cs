@@ -1,6 +1,5 @@
 ﻿using data_access_layer.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Modules.DTOs.Students;
 using Modules.Entities;
 
